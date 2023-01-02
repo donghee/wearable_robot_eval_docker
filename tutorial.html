@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="wireframe">
+    <div>
+      <div class="sm:hidden">
+        <label for="tabs" class="sr-only">Select a tab</label>
+        <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
+        <select
+          id="tabs"
+          name="tabs"
+          class="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+        >
+          <option>튜토리얼</option>
+
+          <option>코드</option>
+
+          <option selected>시뮬레이터</option>
+        </select>
+      </div>
+      <div class="hidden sm:block">
+        <div class="border-b border-gray-200">
+          <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+            <!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
+            <a
+              href="/tutorial"
+              class="border-indigo-500 text-indigo-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
+              >튜토리얼</a
+            >
+
+            <a
+              href="/code"
+              class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
+              >코드</a
+            >
+
+            <a
+              href="/simulator"
+              class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
+              aria-current="page"
+              >시뮬레이터</a
+            >
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-10">
+      <br />
+      <h1 class="text-xl" dir="auto">human 모델 + EduExo</h1>
+      <h3 class="text-lg" dir="auto">웨어러블 로봇 Human에 장착</h3>
+      <br />
+      <p dir="auto">Human 모델에 웨어러블 로봇을 입혀 보자.</p>
+      <br />
+      <p dir="auto">1. human 모델 로드</p>
+      <p dir="auto">
+        <code
+          >cd ~/ros2_ws &amp;&amp; colcon build &amp;&amp; source
+          ./install/setup.bash &amp;&amp; ros2 launch wearable_robot_gazebo
+          human_only.launch.py</code
+        >
+      </p>
+      <br />
+      <p dir="auto">
+        2. human 모델의 동작이 안정화 된 상태에서 웨어러블 로봇(EduExo) 모델
+        로드
+      </p>
+      <p dir="auto">
+        <code
+          >cd ~/ros2_ws &amp;&amp; colcon build &amp;&amp; source
+          ./install/setup.bash &amp;&amp; ros2 launch wearable_robot_gazebo
+          eduexo_only.launch.py</code
+        >
+      </p>
+      <br />
+      <p dir="auto">3. 웨어러블 로봇 제어</p>
+      <p dir="auto">
+        <code
+          >cd ~/ros2_ws &amp;&amp; python3
+          src/wearable_robot_eval/wearable_robot_description/scripts/1_dof_arm_gazebo_test.py
+          -2.5</code
+        >
+      </p>
+      <br />
+      <p dir="auto">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/donghee/wearable_robot_eval_docs/blob/main/.gitbook/assets/image (2).png"
+          ><img
+            src="https://github.com/donghee/wearable_robot_eval_docs/raw/main/.gitbook/assets/image (2).png"
+            alt=""
+            style="max-width: 100%"
+        /></a>
+      </p>
+    </div>
+  </body>
+</html>
