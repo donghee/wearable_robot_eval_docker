@@ -31,6 +31,7 @@ docker.listImages({}, function (err, images) {
 // );
 
 const express = require("express");
+// const router = express.Router({ mergeParams: true });
 var path = require("path");
 
 const { createProxyMiddleware } = require("http-proxy-middleware");
@@ -57,24 +58,24 @@ app.get("/simulator", function (req, res) {
   res.render("simulator", {});
 });
 
-// app.use(
-//   "/vnc",
-//   createProxyMiddleware({
-//     target: "http://localhost:8086/",
-//     changeOrigin: true,
-//     pathRewrite: { "^/vnc": "" },
-//     ws: true,
-//     router: function (req) {
-//       // console.log(req);
-//       if (req.query && req.query.port === 8083) return "http://localhost:8083/";
-//       if (req.query && req.query.port === 8084) return "http://localhost:8084/";
-//       if (req.query && req.query.port === 8085) return "http://localhost:8085/";
-//       if (req.query && req.query.port === 8086) return "http://localhost:8086/";
-//       return "http://localhost:8086";
-//     },
-//   })
-// );
-//
+app.use(
+  "/vm",
+  createProxyMiddleware({
+    target: "http://localhost:8080/",
+    changeOrigin: true,
+    pathRewrite: { "^/vm": "" },
+    ws: true,
+    // router: function (req) {
+    // console.log(req);
+    // if (req.query && req.query.port === 8083) return "http://localhost:8083/";
+    // if (req.query && req.query.port === 8084) return "http://localhost:8084/";
+    // if (req.query && req.query.port === 8085) return "http://localhost:8085/";
+    // if (req.query && req.query.port === 8086) return "http://localhost:8086/";
+    // return "http://localhost:8086";
+    // },
+  })
+);
+
 // app.use(
 //   "/code",
 //   createProxyMiddleware({
