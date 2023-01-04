@@ -32,19 +32,19 @@
 
 
             <a
-              href="/tutorial"
+                href="/tutorial/<%= port %>"
               class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
               >튜토리얼</a
             >
 
             <a
-              href="/code"
+                href="/code/<%= port %>"
               class="border-indigo-500 text-indigo-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
               >코드</a
             >
 
             <a
-              href="/simulator"
+                href="/simulator/<%= port %>"
               class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
               aria-current="page"
               >시뮬레이터</a
@@ -57,7 +57,7 @@
     <div>
       <iframe
         class="w-full h-full"
-        src="/vm/code/?folder=/root/ros2_ws/src/wearable_robot_eval"
+        src="/vm/<%= port %>/code/?folder=/root/ros2_ws/src/wearable_robot_eval"
       >
       </iframe>
     </div>

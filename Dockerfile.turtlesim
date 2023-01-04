@@ -106,7 +106,8 @@ RUN /etc/init.d/nginx restart
 WORKDIR /root/
 RUN mkdir -p /root/ros2_ws/src/
 WORKDIR /root/ros2_ws/src/
-RUN git clone https://github.com/donghee/wearable_robot_eval.git
+#RUN git clone https://github.com/donghee/wearable_robot_eval.git
+RUN git clone https://github.com/ros/ros_tutorials.git -b foxy-devel
 
 # Launch X11, x11vnc, mate and noVNC from supervisor
 CMD ["/usr/bin/supervisord"]
