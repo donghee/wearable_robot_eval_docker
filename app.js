@@ -31,9 +31,7 @@ const dockerRun = function (imageName, port, callback) {
         return console.error(err);
       }
       console.log(data.StatusCode);
-      console.log("-------");
       callback();
-      console.log("-------");
     }
   );
 };
@@ -137,8 +135,7 @@ let renderServer = function (vmRoutes) {
         proxy_set_header                  Connection upgrade;
         access_log                        off;
     }
-}
-`;
+}`;
 };
 
 const { spawn, spawnSync } = require("child_process");
@@ -148,7 +145,6 @@ const readline = require("readline");
 let reloadNginx = function () {
   const config = renderServer(vmRoutes);
 
-  console.log("reloadNginx");
   fs.writeFile("/tmp/default", config, (err) => {
     if (err) {
       console.error(err);
@@ -175,6 +171,7 @@ app.get("/createVm/:imageId", function (req, res) {
     dockerRun("wearable:turtlesim", dockerServicePort, reloadNginx);
 
   setTimeout(reloadNginx, 3000);
+
   // app.use(
   //   `/vm/${dockerServicePort}`,
   //   createProxyMiddleware({
@@ -196,22 +193,5 @@ app.get("/createVm/:imageId", function (req, res) {
   console.log(dockerServicePort);
   dockerServicePort++;
 });
-
-// app.use(
-//   "/code",
-//   createProxyMiddleware({
-//     target: "http://localhost:8090/",
-//     changeOrigin: true,
-//     pathRewrite: { "^/code": "" },
-//     proxyTimeout: 30 * 60 * 1000,
-//     timeout: 30 * 60 * 1000,
-//     ws: true,
-//     router: function (req) {
-//       // console.log(req);
-//       return "http://localhost:8090";
-//     },
-//     onError: (err, req, res) => console.log(err),
-//   })
-// );
 
 http: app.listen(3000);
