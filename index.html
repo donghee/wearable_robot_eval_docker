@@ -36,21 +36,128 @@
     <div class="p-10">
       <br />
       <br />
-      <h1 class="text-xl">Docker 기반의 ROS 개발환경 테스트</h1>
+      <h1 class="text-2xl bold">DOCKER 기반의 ROS 개발환경 테스트</h1>
 
       <br />
-      <a class="underline" href="/tutorial/8080">
-        튜토리얼 #1: 가제보 로봇에 웨어러블 로봇 장착
-      </a>
-      -
-      <a class="underline" href="/createVm/1">실행</a>
-      <br />
-      <a class="underline" href="/tutorial/8081"> 튜토리얼 #2: turtlesim </a> -
-      <a class="underline" href="/createVm/2">실행</a>
+      <!--  -->
+      <!-- <a class="underline" href="/tutorial/8080"> -->
+      <!--   튜토리얼 #1: 가제보 로봇에 웨어러블 로봇 장착 -->
+      <!-- </a> -->
+      <!-- - -->
+      <!-- <button -->
+      <!--   type="button" -->
+      <!--   class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" -->
+      <!-- > -->
+      <!--   <a href="/createVm/1">DOCKER RUN</a> -->
+      <!-- </button> -->
+      <!--  -->
+      <!-- <br /> -->
+      <!-- <a class="underline" href="/tutorial/8081"> 튜토리얼 #2: turtlesim </a> - -->
+      <!-- <a class="underline" href="/createVm/2">실행</a> -->
+      <!--  -->
+      <!-- <br /> -->
+      <!-- <a class="underline" href="/tutorial/8082"> 튜토리얼 #3 </a> - -->
+      <!-- <a class="underline" href="/createVm/3">실행</a> -->
 
-      <br />
-      <a class="underline" href="/tutorial/8082"> 튜토리얼 #3 </a> -
-      <a class="underline" href="/createVm/3">실행</a>
+      <div class="mt-6 flow-root">
+        <ul role="list" class="-my-5 divide-y divide-gray-200">
+          <li class="py-5">
+            <div
+              class="relative focus-within:ring-2 focus-within:ring-indigo-500"
+            >
+              <h3 class="text-sm font-semibold text-gray-800">
+                <a
+                  href="/tutorial/8080"
+                  class="hover:underline focus:outline-none"
+                >
+                  <!-- Extend touch target to entire panel -->
+                  <!-- <span class="absolute inset-0" aria-hidden="true"></span> -->
+                  #1 터틀심
+                </a>
+              </h3>
+              <p class="mt-2">
+                <img
+                  width="50"
+                  src="https://images.squarespace-cdn.com/content/v1/606d378755a86f589aa297b7/1628726096560-PS5KR1B9KHOVQIPVRSD9/rolling-icon-animated-large.gif"
+                />
+              </p>
+              <p class="mt-1 text-sm text-gray-600 line-clamp-2">
+                ROS의 기본 기능을 경험할 수 있는 튜토리얼로 turtulesim 패키지를
+                이용하여 패키지 설치, 노드 실행을 경험할 수 있다.
+              </p>
+              <p class="mt-4">
+                <button
+                  type="button"
+                  class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                  <a href="/createVm/1">실행 docker run </a>
+                </button>
+              </p>
+            </div>
+          </li>
+
+          <li class="py-5">
+            <div
+              class="relative focus-within:ring-2 focus-within:ring-indigo-500"
+            >
+              <h3 class="text-sm font-semibold text-gray-800">
+                <a
+                  href="/tutorial/8081"
+                  class="hover:underline focus:outline-none"
+                >
+                  <!-- Extend touch target to entire panel -->
+                  <!-- <span class="absolute inset-0" aria-hidden="true"></span> -->
+                  #2 웨어러블 로봇 장착
+                </a>
+              </h3>
+              <p class="mt-2">
+                <img width="50" src="https://i.imgur.com/GP9vNuI.png" />
+              </p>
+              <p class="mt-1 text-sm text-gray-600 line-clamp-2">
+                Gazebo 환경에서 실행된 휴먼 모델 위에 웨어러블 로봇을 장착
+                하여보자.
+              </p>
+              <p class="mt-4">
+                <button
+                  type="button"
+                  class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                  <a href="/createVm/2">실행 docker run </a>
+                </button>
+              </p>
+            </div>
+          </li>
+
+          <li class="py-5">
+            <div
+              class="relative focus-within:ring-2 focus-within:ring-indigo-500"
+            >
+              <h3 class="text-sm font-semibold text-gray-800">
+                <a
+                  href="/tutorial/8082"
+                  class="hover:underline focus:outline-none"
+                >
+                  <!-- Extend touch target to entire panel -->
+                  <!-- <span class="absolute inset-0" aria-hidden="true"></span> -->
+                  #3 터틀봇3 SLAM
+                </a>
+              </h3>
+              <p class="mt-2">
+                <img width="50" src="https://i.imgur.com/wFDC5UC.gif" />
+              </p>
+              <p class="mt-1 text-sm text-gray-600 line-clamp-2">SLAM</p>
+              <p class="mt-4">
+                <button
+                  type="button"
+                  class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-3 py-2 text-sm font-medium leading-4 text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                  <a href="/createVm/3">실행 docker run </a>
+                </button>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

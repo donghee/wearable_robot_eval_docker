@@ -53,6 +53,44 @@
       </div>
     </div>
 
+    <% if(port == "8080"){ %>
+    <div class="p-10">
+      <h3>터틀심</h3>
+
+      <br />
+
+      <img
+        width="800"
+        src="https://d17h27t6h515a5.cloudfront.net/topher/2017/March/58d9820b_running-turtlesim/running-turtlesim.png"
+      />
+
+      <br />
+
+      <p>터틀심 실행</p>
+      <pre>
+      ros2 run turtlesim turtlesim_node
+      </pre>
+
+      <p>turtlesim teleop 실행</p>
+      <pre>
+      ros2 run turtlesim turtle_teleop_key
+      </pre>
+
+      <br />
+
+      <p>노드 목록 보기</p>
+
+      <pre>
+      ros2 node list
+      </pre>
+
+      <p>노드 정보 보기</p>
+
+      <pre>
+      ros2 node info /turtlesim
+      </pre>
+    </div>
+    <% } %> <% if(port == "8081"){ %>
     <div class="p-10">
       <br />
       <h1 class="text-xl" dir="auto">human 모델 + EduExo</h1>
@@ -96,11 +134,60 @@
           rel="noopener noreferrer"
           href="https://github.com/donghee/wearable_robot_eval_docs/blob/main/.gitbook/assets/image (2).png"
           ><img
+            width="800"
             src="https://github.com/donghee/wearable_robot_eval_docs/raw/main/.gitbook/assets/image (2).png"
             alt=""
             style="max-width: 100%"
         /></a>
       </p>
     </div>
+    <% } %> <% if(port == "8082"){ %>
+    <div class="p-10">
+      <h4 id="시뮬레이터-실행">
+        <a
+          href="#/day2?id=%ec%8b%9c%eb%ae%ac%eb%a0%88%ec%9d%b4%ed%84%b0-%ec%8b%a4%ed%96%89"
+          data-id="시뮬레이터-실행"
+          class="anchor"
+          ><span>시뮬레이터 실행</span></a
+        >
+      </h4>
+
+      <pre
+        v-pre=""
+        data-lang=""
+      ><code class="lang-">ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py</code>
+      </pre>
+
+      <br />
+
+      <p>
+        <img
+          width="800"
+          src="https://i.imgur.com/eImcWz6.png"
+          data-origin="https://i.imgur.com/eImcWz6.png"
+          alt=""
+        />
+      </p>
+
+      <br />
+
+      <pre
+        v-pre=""
+        data-lang=""
+      ><code class="lang-">ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=true</code>
+      </pre>
+
+      <br />
+
+      <p>
+        <img
+          width="800"
+          src="https://i.imgur.com/MDWDPgQ.png"
+          data-origin="https://i.imgur.com/MDWDPgQ.png"
+          alt=""
+        />
+      </p>
+    </div>
+    <% } %>
   </body>
 </html>

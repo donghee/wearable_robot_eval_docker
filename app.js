@@ -84,9 +84,9 @@ app.get("/simulator/:port", function (req, res) {
 // };
 
 let vmRoutes = {
-  "/vm/8080": [{ proxy_pass: "http://localhost:8080/" }],
-  "/vm/8081": [{ proxy_pass: "http://localhost:8081/" }],
-  "/vm/8082": [{ proxy_pass: "http://localhost:8082/" }],
+  "/vm/8080/": [{ proxy_pass: "http://localhost:8080/" }],
+  "/vm/8081/": [{ proxy_pass: "http://localhost:8081/" }],
+  "/vm/8082/": [{ proxy_pass: "http://localhost:8082/" }],
 };
 
 //https://github.com/spherex-dev/nginx-route-manager
@@ -164,11 +164,11 @@ let reloadNginx = function () {
 app.get("/createVm/:imageId", function (req, res) {
   const imageId = req.params.imageId;
   if (imageId == "1")
-    dockerRun("wearable:foxy-desktop", dockerServicePort, reloadNginx);
+    dockerRun("wearable:turtlesim", dockerServicePort, reloadNginx);
   if (imageId == "2")
-    dockerRun("wearable:turtlesim", dockerServicePort, reloadNginx);
+    dockerRun("wearable:foxy-desktop", dockerServicePort, reloadNginx);
   if (imageId == "3")
-    dockerRun("wearable:turtlesim", dockerServicePort, reloadNginx);
+    dockerRun("wearable:turtlebot3", dockerServicePort, reloadNginx);
 
   setTimeout(reloadNginx, 3000);
 
